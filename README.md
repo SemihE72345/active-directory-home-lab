@@ -1,4 +1,4 @@
-# Active Directory Home Lab — Windows Server Administration & Security Monitoring
+<img width="1919" height="953" alt="image" src="https://github.com/user-attachments/assets/d4ee19e7-ed89-4928-96d8-9406bb8f2c28" /># Active Directory Home Lab — Windows Server Administration & Security Monitoring
 
 A hands-on lab simulating a small company's Windows domain infrastructure, identity administration, workstation security policies, and authentication incident investigations. Built as an IT support / junior cybersecurity portfolio project using an isolated VirtualBox network.
 
@@ -36,11 +36,11 @@ The lab network deliberately does not require a default gateway or external conn
 
 ## Implementation
 
-1. **Windows Server deployment:** Installed and renamed DC01; configured static IPv4 networking; verified with `ipconfig /all` and `ping`. [Evidence](screenshots/01-DC01-server-configuration.png)
-2. **Active Directory and DNS:** Promoted DC01 to a domain controller for `corp.adlab.test`. Verified basic DNS tests using `dcdiag /test:dns /DnsBasic /v` and domain controller discovery with `nltest /dsgetdc:corp.adlab.test`. [Evidence](screenshots/02-active-directory-domain-structure.png)
+1. **Windows Server deployment:** Installed and renamed DC01; configured static IPv4 networking; verified with `ipconfig /all` and `ping`. <img width="1919" height="953" alt="image" src="https://github.com/user-attachments/assets/ffcbacaf-1937-48b4-958e-539a3045b749" />
+2. **Active Directory and DNS:** Promoted DC01 to a domain controller for `corp.adlab.test`. Verified basic DNS tests using `dcdiag /test:dns /DnsBasic /v` and domain controller discovery with `nltest /dsgetdc:corp.adlab.test`. <img width="870" height="530" alt="image" src="https://github.com/user-attachments/assets/51fa43c7-8ad8-4931-ba0b-04ed4ea16cfd" />
 3. **Identity administration:** Created `AdLab-Technologies` with IT, HR, Finance, Sales and Groups OUs; provisioned 8 fictional users; created `GG_IT_Users`, `GG_HR_Users`, `GG_Finance_Users` and `GG_Sales_Users`; populated memberships. [OU evidence](screenshots/03-organisational-unit-structure.png) · [User evidence](screenshots/04-active-directory-user-accounts.png) · [Group evidence](screenshots/05-security-group-membership.png)
 4. **Client deployment:** Installed CLIENT01, assigned DNS to DC01 and joined the domain; signed in with `CORP\jwilson`. [Computer evidence](screenshots/06-domain-joined-workstation.png) · [Authentication evidence](screenshots/07-domain-user-authentication.png)
-5. **Group Policy:** Created `Workstations` OU, linked `GPO-Workstation-Security`, and configured machine inactivity limit to **300 seconds**. Policy application and workstation lock were verified during the lab. [GPO evidence](screenshots/08-group-policy-configuration.png)
+5. **Group Policy:** Created `Workstations` OU, linked `GPO-Workstation-Security`, and configured machine inactivity limit to **300 seconds**. Policy application and workstation lock were verified during the lab. <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8ea2692d-7718-4536-955e-847e1a441264" />
 6. **Security investigations:** Analysed failed interactive logon, user-account disablement and domain-account lockout events, then restored test accounts. See the reports below.
 
 ## Security investigations
