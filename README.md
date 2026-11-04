@@ -1,4 +1,4 @@
-<img width="1919" height="953" alt="image" src="https://github.com/user-attachments/assets/d4ee19e7-ed89-4928-96d8-9406bb8f2c28" /># Active Directory Home Lab — Windows Server Administration & Security Monitoring
+# Active Directory Home Lab — Windows Server Administration & Security Monitoring
 
 A hands-on lab simulating a small company's Windows domain infrastructure, identity administration, workstation security policies, and authentication incident investigations. Built as an IT support / junior cybersecurity portfolio project using an isolated VirtualBox network.
 
