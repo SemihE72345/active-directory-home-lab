@@ -1,0 +1,24 @@
+# VirtualBox files
+*.vdi
+*.vbox
+*.vbox-prev
+*.sav
+*.vmdk
+*.ova
+*.ovf
+
+# Windows installation files
+*.iso
+
+# Temporary files
+Thumbs.db
+Desktop.ini
+*.tmp
+*.log
+
+# Sensitive files
+.env
+passwords.txt
+credentials.txt
+*.key
+*.pem
