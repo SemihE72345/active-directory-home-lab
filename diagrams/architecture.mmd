@@ -1,0 +1,8 @@
+flowchart TD
+    subgraph HOST[Windows 11 physical host — Oracle VirtualBox]
+      subgraph LAB[Isolated AD-LAB internal network / 192.168.10.0/24]
+        DC["DC01 · Windows Server 2025<br/>192.168.10.10<br/>AD DS · DNS · Security logs"]
+        CL["CLIENT01 · Windows 11 Enterprise<br/>192.168.10.20<br/>Domain logons · GPO · Security logs"]
+        CL <-->|"DNS · Kerberos · LDAP · Group Policy"| DC
+      end
+    end
