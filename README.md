@@ -21,14 +21,15 @@ A hands-on lab simulating a small company's Windows domain infrastructure, ident
 ## Architecture
 
 ```mermaid
-flowchart TD
-    subgraph HOST[Windows 11 physical host — Oracle VirtualBox]
-      subgraph LAB[Isolated AD-LAB internal network / 192.168.10.0/24]
-        DC["DC01 · Windows Server 2025<br/>192.168.10.10<br/>AD DS · DNS · Security logs"]
-        CL["CLIENT01 · Windows 11 Enterprise<br/>192.168.10.20<br/>Domain user logons · GPO · Security logs"]
-        CL <-->|"DNS · Kerberos · LDAP · Group Policy"| DC
-      end
+flowchart LR
+    subgraph LAB["AD-LAB | Isolated Virtual Network | 192.168.10.0/24"]
+        direction LR
+        DC["DC01<br/>Windows Server 2025<br/>192.168.10.10<br/>Active Directory + DNS"]
+        CLIENT["CLIENT01<br/>Windows 11 Enterprise<br/>192.168.10.20<br/>Domain Authentication + GPO"]
+        DC <-->|"DNS / Kerberos / LDAP / GPO"| CLIENT
     end
+
+    HOST["Windows 11 Host PC | Oracle VirtualBox"] -.-> LAB
 ```
 
 The lab network deliberately does not require a default gateway or external connectivity for domain operations. CLIENT01 was joined to `corp.adlab.test` and is administered centrally using Active Directory.
@@ -81,4 +82,4 @@ The lab network deliberately does not require a default gateway or external conn
 - CLIENT01 displayed an expired Windows evaluation watermark during setup. If reusing this lab, check evaluation and licensing status; do not use it as a production deployment.
 - This repo intentionally excludes VM disk images, passwords, credentials, account secrets, and any real organisational data.
 
-Additional detail: [Lab build notes](docs/lab-notes.md) · [Resume-ready descriptions](docs/resume-bullets.md) · [Architecture diagram source](diagrams/architecture.mmd).
+Additional detail: [Lab build notes](docs/lab-notes.md) · [Architecture diagram source](diagrams/architecture.mmd).
